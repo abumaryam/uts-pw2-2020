@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+// lokasi file: app/Http/Controllers/ProdukController.php
+
+
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -33,15 +36,16 @@ class ProdukController extends Controller
         ];
 
         //kemudian tampilkan dalam view
+        return view('produk.index',['produk'=>$produk]);
     }
     
     public function tambah()
     {
-        // tampilkan form seperti yang ada di template
+        return view('produk.tambah');
     }
 
-    public function detail()
+    public function detail(Request $request)
     {
-        // tampilkan halaman success seperti yang ada di template
+        return view('produk.detail',['request'=>$request]);
     }
 }
