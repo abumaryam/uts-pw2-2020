@@ -1,3 +1,5 @@
+<?php // lokasi file: routes/web.php ?>
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/produk/index','ProdukController@index');
+Route::get('/produk/tambah','ProdukController@tambah');
+Route::post('/produk/detail','ProdukController@detail')->name('produk.detail');
